@@ -133,7 +133,7 @@ class Cachix
      * @param type $sKey
      * @return string $sContent content of requested | empty on fail
      */
-    public static function getCache(string $sKey = '') : string
+    public static function getCache(string $sKey = '')
     {
 		self::init();
 		
