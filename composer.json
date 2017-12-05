@@ -19,10 +19,4 @@
             "Cachix": ""
         }
     }
-} 
-
-{
-    "require": {
-        "gueff/cachix":"dev-master"
-    }
-} 
+}
