@@ -35,9 +35,6 @@ $ composer install
 	'sBinGrep' => '/bin/grep'
 ));
 
-// Data to be cached
-$aData = ['foo' => 'bar'];
-
 // build a Cache-Key
 $sKey = 'myCacheKey.Token';
 
@@ -48,10 +45,13 @@ $sKey = 'myCacheKey.Token';
 // first time saving data to cache...
 if (empty(\Cachix::getCache($sKey)))
 {
+    // Data to be cached
+    $aData = ['foo' => 'bar'];
+    
     \Cachix::saveCache(
-        	$sKey,
-        	$aData
-	);
+       	$sKey,
+     	$aData
+    );
 }
 // ...or read from existing Cache
 else
