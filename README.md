@@ -23,6 +23,8 @@ $ composer install
 ## Usage
 
 ~~~
+<?php
+
 // init Config
 \Cachix::init(array(
     'bCaching' => true,
