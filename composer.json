@@ -1,0 +1,28 @@
+{
+    "name": "gueff/cachix",
+    "description": "A simple PHP Caching Class working with files",
+    "keywords": ["php","php7","cache","caching","file"],
+    "homepage": "https://github.com/gueff/cachix",
+    "type": "library",
+    "license": "GPLv3",
+    "authors": [
+        {
+            "name": "Guido K.B.W. Ueffing"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "php": ">=7.0"
+    },
+    "autoload": {
+        "psr-0": {
+            "Cachix": ""
+        }
+    }
+} 
+
+{
+    "require": {
+        "gueff/cachix":"dev-master"
+    }
+} 
