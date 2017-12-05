@@ -22,7 +22,7 @@ $ composer install
 
 ## Usage
 
-~~~
+~~~php
 <?php
 
 // init Config
