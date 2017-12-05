@@ -40,7 +40,7 @@ $aData = ['foo' => 'bar'];
 $sKey = 'myCacheKey.Token';
 
 // autodelete cachefiles
-// which contain the string ".whatever" in key-names
+// which contain the string ".Token" in key-names
 \Cachix::autoDeleteCache('.Token');
 
 // first time saving data to cache...
