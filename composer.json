@@ -4,7 +4,7 @@
     "keywords": ["php","php7","cache","caching","file"],
     "homepage": "https://github.com/gueff/cachix",
     "type": "library",
-    "license": "GPLv3",
+    "license": "GPL-3.0-or-later",
     "authors": [
         {
             "name": "Guido K.B.W. Ueffing"
