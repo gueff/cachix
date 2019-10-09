@@ -220,12 +220,17 @@ class Cachix
         $sCmd = self::$sBinFind . ' ' . self::$sCacheDir . ' -type f -mmin +' . $sMinutes; 
         ('' !== $sToken) ? $sCmd.= ' | ' . self::$sBinGrep . ' "' . $sToken . '"' : false;
         $mFind = shell_exec($sCmd);
-		
+
 		if (!is_null($mFind) && !empty(trim($mFind)))
 		{
-			$sCmd = self::$sBinRemove . ' ' . $mFind; 
-			$mRemove = shell_exec($sCmd);
-			
+		    $aLine = explode("\n", $mFind);
+
+		    foreach ($aLine as $sLine)
+            {
+                $sCmd = self::$sBinRemove . ' "' . $sLine . '"';
+                $mRemove = shell_exec($sCmd);
+            }
+
 			return (boolean) $mRemove;
 		}
 		
