@@ -219,9 +219,9 @@ class Cachix
         
         $sCmd = self::$sBinFind . ' ' . self::$sCacheDir . ' -type f -mmin +' . $sMinutes; 
         ('' !== $sToken) ? $sCmd.= ' | ' . self::$sBinGrep . ' "' . $sToken . '"' : false;
-        $mFind = shell_exec($sCmd);
+        $mFind = trim(shell_exec($sCmd));
 
-		if (!is_null($mFind) && !empty(trim($mFind)))
+		if (!is_null($mFind) && !empty($mFind))
 		{
 		    $aLine = explode("\n", $mFind);
 
