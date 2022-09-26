@@ -10,7 +10,7 @@ create the composer.json file with following content:
 ~~~
 {
     "require": {
-        "gueff/cachix":"1.0.0"
+        "gueff/cachix":"1.0.1"
     }
 }
 ~~~
