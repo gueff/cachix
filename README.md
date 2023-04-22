@@ -2,7 +2,7 @@
 A simple PHP Caching Class working with files
 
 ## Requirements
-- PHP 7
+- PHP >= 7.4
 - Linux commands `rm`, `find` and `grep` to be executable via PHP's `shell_exec` command
 
 ## Installation
@@ -10,7 +10,7 @@ create the composer.json file with following content:
 ~~~
 {
     "require": {
-        "gueff/cachix":"1.0.1"
+        "gueff/cachix":"1.0.2"
     }
 }
 ~~~
