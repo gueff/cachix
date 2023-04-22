@@ -3,7 +3,7 @@
 /**
  * Cachix.php
  * 
- * @requiere Linux commands `rm`, `find` and `grep` to be executable via shell_exec
+ * @require Linux commands `rm`, `find` and `grep` to be executable via shell_exec
  * @example
  * 
  * // init Config
@@ -127,7 +127,6 @@ class Cachix
 
 	/**
      * gets data from cache by key
-     * 
 	 * @access public
 	 * @static
      * @param type $sKey
@@ -159,7 +158,6 @@ class Cachix
 
     /**
      * saves data into cache on key
-     * 
 	 * @access public
 	 * @static
      * @param string $sKey
@@ -195,8 +193,7 @@ class Cachix
     
     /**
      * deletes cachefiles after certain time
-	 * 
-     * @requiere Linux commands `rm`, `find` and `grep` executable via shell_exec
+     * @require Linux commands `rm`, `find` and `grep` executable via shell_exec
 	 * @access public
 	 * @static
      * @param string $sToken optional; default='' (all cachefiles)
@@ -217,8 +214,8 @@ class Cachix
             $sMinutes = self::$iDeleteAfterMinutes;
         }
         
-        $sCmd = self::$sBinFind . ' ' . self::$sCacheDir . ' -type f -mmin +' . $sMinutes; 
-        ('' !== $sToken) ? $sCmd.= ' | ' . self::$sBinGrep . ' "' . $sToken . '"' : false;
+        $sCmd = self::$sBinFind . ' ' . self::$sCacheDir . ' -type f -mmin +' . $sMinutes;
+        ('' !== $sToken) ? $sCmd.= ' | ' . self::$sBinGrep . ' ' . escapeshellarg(addslashes($sToken)) : false;
         $mFind = trim((string) shell_exec($sCmd));
 
 		if (!is_null($mFind) && !empty($mFind))
@@ -236,12 +233,10 @@ class Cachix
 		
 		return (boolean) $mFind;
     }
-	
     
     /**
-     * fushes cache (deletes all cachefiles immediatly)
-     * 
-     * @requiere Linux command `rm` executable via shell_exec
+     * flushes cache (deletes all cachefiles immediatly)
+     * @require Linux command `rm` executable via shell_exec
 	 * @access public
 	 * @static
      * @return boolean success

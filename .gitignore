@@ -1,0 +1,7 @@
+.git
+.idea
+gen
+*.tar.gz
+_gitPull.sh
+_gitPush.sh
+Changelog.md
